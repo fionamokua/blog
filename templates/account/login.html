@@ -1,0 +1,39 @@
+{% extends '_base.html' %}
+
+{%load static%}
+{% block title %}LOGIN{% endblock title%}
+{% block content%} 
+
+<div class="loginbackgroundimage">
+
+    <div class="logincontainer">
+
+    <img src="{% static 'images/loginicon.jpeg'%}" alt="" class="loginicon">
+    <div class="box-2">
+        <div class="button2 btn-two">
+          <span><a href="{% url 'home'%}">cancel login</a></span>
+        </div>
+      </div>
+    <div class="logincontent">
+<form action="" method="post" >
+    <div class="logindata">
+    <h5 class="waivy">
+        <span style="--i:1">L</span><span style="--i:2">O</span><span style="--i:3">G</span><span style="--i:4">I</span><span style="--i:5">N</span><span style="--i:7">!</span>
+        </h5>
+        <p>Do you have an account?</p></div>
+        
+    {% csrf_token %}
+    {{form}}
+    <div class="loginbuttons">
+        <button class="loginbtn" type="submit">Login</button>
+        
+    </div>
+    <p>Dont have an account? <a href="{% url 'account_signup'%}">signup</a><br>Forgot password?<a href="{% url 'account_reset_password'%}">forgotpassword</a></p>
+</form>
+</div>
+
+</div>
+
+</div>
+
+{% endblock content %}
